@@ -1,2 +1,12 @@
 [tool.pytest.ini_options]
 pythonpath = ["."]
+
+[tool.ruff]
+exclude = ["*.ipynb"]
+
+[tool.ruff.lint]
+# Deliberate ignores, with rationale:
+# ASYNC230 - blocking reads in FastAPI lifespan run once at startup, before serving
+# BLE001   - broad excepts are intentional graceful degradation (serving > logging; UI warnings)
+# SIM102   - nested ifs are Streamlit-idiomatic button handling; clearer as written
+ignore = ["ASYNC230", "BLE001", "SIM102"]

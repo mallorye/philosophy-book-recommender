@@ -1,5 +1,6 @@
 import pandas as pd
-from evaluate import get_eligible_users, split_user, hit_at_k
+
+from evaluate import get_eligible_users, hit_at_k, split_user
 
 
 def make_df():

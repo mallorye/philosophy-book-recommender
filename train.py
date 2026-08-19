@@ -1,9 +1,15 @@
 import json
+import pickle
+
 import pandas as pd
+
 import wandb
 from evaluate import evaluate
-import pickle
-from models import make_popularity_recommender, make_item_item_recommender, build_similarity
+from models import (
+    build_similarity,
+    make_item_item_recommender,
+    make_popularity_recommender,
+)
 
 # ---------- data ----------
 

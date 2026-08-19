@@ -2,15 +2,17 @@
 import json
 import os
 import pickle
+import string
 import time
 import uuid
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
-import string
+
 import boto3
-import wandb
 from fastapi import FastAPI
 from pydantic import BaseModel
+
+import wandb
 
 # ---------- request/response shapes (the contract, enforced) ----------
 
@@ -106,7 +108,6 @@ def recommend(input_asins: list[str], k: int) -> tuple[list[str], bool]:
     Same logic as make_item_item_recommender's inner function, except the
     cold-start fallback reads STATE['popularity_ranked'] instead of df.
     Uses STATE['sim']."""
-    ...
     sim = STATE["sim"] 
     known = [a for a in input_asins if a in STATE["sim"].columns]
     if not known:                       # cold-start fallback: popularity

@@ -7,12 +7,12 @@ import time
 import uuid
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
-
 import boto3
+import wandb
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-import wandb
+
 
 # ---------- request/response shapes (the contract, enforced) ----------
 

@@ -8,10 +8,25 @@ experiment tracking, model registry, serving, logging, monitoring, CI/CD, and
 cloud deployment.
 
 **Live components (while the AWS Academy Learner Lab session is active):**
-- User frontend (Streamlit): `http://<APP_EC2_IP>:8501`
-- ML backend (FastAPI): `http://<APP_EC2_IP>:8000` (`/predict`, `/health`, `/docs`)
-- Monitoring dashboard (Streamlit, separate EC2): `http://<OPS_EC2_IP>:8501`
-- W&B project (experiments, dataset + model artifacts):https://api.wandb.ai/links/malloryberg-university-of-denver/3ovg6an3.  Unfortuantely I am using my university account and it doesn't allow for public project sharing - hence just the creation of ther eport.
+- User frontend (Streamlit): `http://http://54.148.135.95:8501`
+- ML backend (FastAPI): `http://http://54.148.135.95:8000` (`/predict`, `/health`, `/docs`)
+- Monitoring dashboard (Streamlit, separate EC2): `http://http://35.161.115.37:8501`
+- W&B project (experiments, dataset + model artifacts):https://api.wandb.ai/links/malloryberg-university-of-denver/3ovg6an3.   
+
+ — the W&B project lives under a university team entity where public project
+  sharing is unavailable; the report is the public window, and full dashboard
+  screenshots are in /Screenshots
+
+## Submission evidence
+
+All screenshots captured in a single live session ([`Screenshots/`](Screenshots/)):
+EC2 instances, DynamoDB tables with live prediction and feedback rows, the
+frontend and monitoring dashboard running at their public IPs, W&B runs and
+the production-aliased model artifact, and the CI green check with branch
+protection.
+
+![EC2 instances running](Screenshots/EC2%20Instances%20List.png)
+![Prediction logs in DynamoDB](Screenshots/dynamodb_predictionstable.png)
 
 ## Architecture
 

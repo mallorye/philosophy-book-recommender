@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install ruff pytest pandas
+      - run: pip install "ruff==0.9.4" pytest pandas
       - name: Lint
         run: ruff check . --exclude notebooks
       - name: Tests

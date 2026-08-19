@@ -81,15 +81,17 @@ def build_title_index(catalog: dict) -> dict:
     return {normalize(info['title']): asin for asin, info in catalog.items()}
 
 
-def resolve_titles(favorites: list[str]) -> tuple[list[str], list[str]]:
-    """user-typed titles -> (matched_asins, unmatched_titles)
-    using STATE['title_index']"""
-   
-    matched = []
-    unmatched = []
-    index = STATE["title_index"]
+def resolve_titles(favorites):
+    matched, unmatched = [], []
+    index = STATE["title_index"]          # normalized title -> asin
     for title in favorites:
-        asin = index.get(normalize(title))     # None if not found
+        q = normalize(title)
+        asin = index.get(q)               # exact first
+        if not asin and len(q) >= 4:      # then substring
+            for cat_title, cat_asin in index.items():
+                if q in cat_title:
+                    asin = cat_asin
+                    break
         if asin:
             matched.append(asin)
         else:

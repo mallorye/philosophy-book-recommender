@@ -1,8 +1,9 @@
 import json
 import pickle
-import pandas as pd
-import wandb
 
+import pandas as pd
+
+import wandb
 from evaluate import evaluate
 from models import (
     build_similarity,

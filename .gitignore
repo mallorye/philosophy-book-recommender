@@ -5,3 +5,4 @@ __pycache__/
 wandb/
 artifacts/
 dev.py
+model.pkl

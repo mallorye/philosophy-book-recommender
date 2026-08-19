@@ -11,7 +11,7 @@ cloud deployment.
 - User frontend (Streamlit): `http://<APP_EC2_IP>:8501`
 - ML backend (FastAPI): `http://<APP_EC2_IP>:8000` (`/predict`, `/health`, `/docs`)
 - Monitoring dashboard (Streamlit, separate EC2): `http://<OPS_EC2_IP>:8501`
-- W&B project (experiments, dataset + model artifacts): https://wandb.ai/malloryberg-university-of-denver/book-recommender
+- W&B project (experiments, dataset + model artifacts):https://api.wandb.ai/links/malloryberg-university-of-denver/3ovg6an3.  Unfortuantely I am using my university account and it doesn't allow for public project sharing - hence just the creation of ther eport.
 
 ## Architecture
 
